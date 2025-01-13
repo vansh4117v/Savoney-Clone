@@ -14,6 +14,9 @@ let budgetObject = {}
 let expenseArray = []
 
 function start() {
+    if (localStorage.length == 0) {
+        reset();
+    }
     totalIncome.innerText = JSON.parse(localStorage.getItem("totalIncome"))
     totalExpense.innerText = JSON.parse(localStorage.getItem("totalExpense"))
     totalBalance.innerText = parseInt(totalIncome.innerText) - parseInt(totalExpense.innerText)
