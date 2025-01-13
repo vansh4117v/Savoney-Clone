@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Savoney</title>
+	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="nav flex">
+		<i id="ham-toggle" class="fa-solid fa-bars"></i>
+		<span>Savoney</span>
+	</div>
+
+	<section class="home">
+		<h1>Welcome to SAVONEY</h1>
+	</section>
+
+	<section class="dashboard" id="dashboard">
+		<div class="line heading aos-init aos-animate" data-aos="fade-right">
+			<i class="uil uil-tachometer-fast-alt"></i> Dashboard
+		</div>
+		<div class="total-outer flex aos-init aos-animate" data-aos="fade-right">
+			<div class="total">
+				<div><i class="uil uil-thumbs-up"></i></div>
+				<div>Total Balance</div>
+				<div id="total-balance">0</div>
+			</div>
+			<div class="total">
+				<div><i class="uil uil-comments"></i></div>
+				<div>Total Income</div>
+				<div id="total-income">0</div>
+			</div>
+			<div class="total">
+				<div><i class="uil uil-share"></i></div>
+				<div>Total Expense</div>
+				<div id="total-expense">0</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="income">
+		<div class="income aos-init aos-animate" data-aos="fade-right">
+			<div class="heading line aos-init aos-animate" data-aos="fade-right">
+				<i class="uil uil-tachometer-fast-alt"></i> Income Details
+			</div>
+			<form id="income-form">
+				Amount
+				<input required type="number" id="income-amt" placeholder="Enter Amount">
+				Date
+				<input required type="date" id="income-date" placeholder="dd-mm-yyyy">
+				Remarks
+				<input required type="text" id="income-remarks" placeholder="Enter you r income remarks">
+				Type of Source
+				<select name="" id="income-src">
+					<option value="" disabled selected>Select Source</option>
+					<option value="earning">Earning</option>
+					<option value="savings">Savings</option>
+					<option value="other">Others</option>
+				</select>
+				<button>Add <i class="uil uil-navigator"></i></button>
+			</form>
+		</div>
+		<div class="income aos-init aos-animate" data-aos="fade-right">
+			<div class="heading line aos-init aos-animate flex" data-aos="fade-right">
+				<i class="uil uil-tachometer-fast-alt"></i> Income History
+			</div>
+			<div class="income-history-box"></div>
+		</div>
+		<div class="income aos-init aos-animate" data-aos="fade-right">
+			<div class="heading line aos-init aos-animate flex" data-aos="fade-right">
+				<i class="uil uil-tachometer-fast-alt"></i> Income Chart
+			</div>
+			<canvas id="incomeChart"></canvas>
+		</div>
+	</section>
+
+	<section id="budget">
+		<div class="budget aos-init aos-animate" data-aos="fade-right">
+			<div class="heading line aos-init aos-animate" data-aos="fade-right">
+				<i class="uil uil-tachometer-fast-alt"></i> Budget Details
+			</div>
+			<form id="budget-form">
+				Budget
+				<input required type="number" id="budget-amt" placeholder="Enter Amount">
+				Type
+				<input required type="text" id="budget-type" placeholder="Enter Type">
+				<button>Add <i class="uil uil-navigator"></i></button>
+			</form>
+		</div>
+		<div class="budget aos-init aos-animate" data-aos="fade-right">
+			<div class="heading line aos-init aos-animate flex" data-aos="fade-right">
+				<i class="uil uil-tachometer-fast-alt"></i> Budget List
+			</div>
+			<div class="budget-list"></div>
+		</div>
+	</section>
+	
+	<section id="expense">
+		<div class="expense aos-init aos-animate" data-aos="fade-right">
+			<div class="heading line aos-init aos-animate" data-aos="fade-right">
+				<i class="uil uil-tachometer-fast-alt"></i> Expense Details
+			</div>
+			<form id="expense-form">
+				Expense
+				<input required type="number" id="expense-amt" placeholder="Enter Amount">
+				Date
+				<input required type="date" id="expense-date" placeholder="dd-mm-yyyy">
+				Remarks
+				<input required type="text" id="expense-remarks" placeholder="Enter you r income remarks">
+				Type of Source
+				<select id="expense-src">
+					<option value="" disabled selected>Select Source</option>
+				</select>
+				<button>Add <i class="uil uil-navigator"></i></button>
+			</form>
+		</div>
+		<div class="expense aos-init aos-animate" data-aos="fade-right">
+			<div class="heading line aos-init aos-animate flex" data-aos="fade-right">
+				<i class="uil uil-tachometer-fast-alt"></i> Expense History
+			</div>
+			<div class="expense-history-box"></div>
+		</div>
+		<div class="expense aos-init aos-animate" data-aos="fade-right">
+			<div class="heading line aos-init aos-animate flex" data-aos="fade-right">
+				<i class="uil uil-tachometer-fast-alt"></i> Expense Chart
+			</div>
+			<canvas id="expenseChart"></canvas>
+		</div>
+	</section>
+	
+	<footer>
+		made with <i class="bx bxs-heart"></i> by Dewank, copied by Vansh - vansh4117v
+	</footer>
+
+	<div class="hamburger">
+		<ul class="lists">
+			<li class="list">
+				<a href="#dashboard" class="nav-link">
+					<i class="bx bx-home-alt icon"></i>
+					<span class="link">Dashboard</span>
+				</a>
+			</li>
+			<li class="list">
+				<a href="#income" class="nav-link">
+					<i class="bx bx-bar-chart-alt-2 icon"></i>
+					<span class="link">Income</span>
+				</a>
+			</li>
+			<li class="list">
+				<a href="#budget" class="nav-link">
+					<i class="bx bx-bell icon"></i>
+					<span class="link">Budget</span>
+				</a>
+			</li>
+			<li class="list">
+				<a href="#expense" class="nav-link">
+					<i class="bx bx-message-rounded icon"></i>
+					<span class="link">Expense</span>
+				</a>
+			</li>
+			<li class="list">
+				<a href="#" class="nav-link" id="reset">
+					<i class="bx bx-pie-chart-alt-2 icon"></i>
+					<span class="link">Reset</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<script src="./script.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+		AOS.init();
+		const hamButton = document.getElementById("ham-toggle")
+		const hamMenu = document.querySelector(".hamburger")
+		hamButton.addEventListener("click", () => {
+			hamMenu.classList.toggle("show")
+		})
+	</script>
+	<script src="https://kit.fontawesome.com/7007232ba9.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+
+</html>
+
+<!-- vansh4117v -->

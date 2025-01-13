@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+:root {
+    --primary-color: #4070f4;
+    --secondary-color: #1BCFB4;
+    --white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #dee3e7;
+}
+
+.dashboard {
+    background-color: #fff;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line {
+    position: relative;
+}
+
+.line::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    height: 2px;
+    width: 90%;
+    background-color: #000;
+    margin: 10px;
+}
+
+.nav {
+    justify-content: left;
+    gap: 20px;
+    padding: 15px 25px;
+    font-size: 24px;
+    font-weight: 500;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+#ham-toggle {
+    cursor: pointer;
+}
+
+.home {
+    background-image: url("./images/bg169.svg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.2rem;
+    color: white;
+    height: calc(100vh - 65px);
+}
+
+.heading {
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: left;
+    align-items: center;
+    font-weight: 700;
+    padding: 2rem 1rem;
+    height: 60px;
+    width: 100%;
+}
+
+.heading i {
+    background-color: var(--primary-color);
+    color: var(--white);
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    border-radius: .5rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.total-outer {
+    width: 100%;
+    gap: 30px;
+    padding: 60px 0;
+}
+
+.total {
+    height: 150px;
+    width: 290px;
+    background-color: #4070f4;
+    border-radius: 16px;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    font-size: 24px;
+}
+
+#income,
+#expense,
+#budget {
+    margin: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    scroll-margin-top: 70px;
+}
+
+#budget {
+    grid-template-columns: 1fr 2fr;
+}
+
+#income .income,
+#expense .expense,
+#budget .budget {
+    height: 560px;
+    width: 100%;
+    background-color: var(--white);
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+#budget .budget {
+    height: 350px;
+}
+
+#income-form,
+#expense-form,
+#budget-form {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.income-history-box,
+.expense-history-box,
+.budget-list {
+    margin-top: 15px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.income-history,
+.expense-history {
+    width: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.budget-list .outer {
+    width: 100%;
+    background-color: #e6e5e5;
+    padding: 0.25rem;
+    height: 0.8rem;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    border-radius: 1rem;
+    margin-bottom: 10px;
+}
+
+.budget-list .inner{
+    background-color: orange;
+    border-radius: 1rem;
+    height: 0.5rem;
+}
+
+input,
+select {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid var(--primary-color);
+    padding: 0.5rem;
+    margin: 5px 0 20px;
+}
+
+button {
+    background-color: var(--primary-color);
+    font-size: 12px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    display: block;
+    margin: 15px auto;
+    color: var(--white);
+    cursor: pointer;
+}
+
+footer {
+    background-color: #fff;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer i {
+    color: red;
+    margin: 4px;
+}
+
+.hamburger {
+    position: fixed;
+    z-index: 4;
+    height: 100vh;
+    width: 260px;
+    display: none;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+}
+
+.lists {
+    margin-top: 75px;
+    padding-left: 10px;
+    list-style-type: none;
+    font-size: 16px;
+}
+
+.nav-link {
+    padding: 20px 10px;
+    display: block;
+    text-decoration: none;
+    width: 90%;
+    color: #707070;
+    border-radius: 10px;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.nav-link:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.icon {
+    margin-left: 8px;
+}
+
+.show {
+    display: block;
+    animation: width 0.8s ease forwards;
+}
+
+@keyframes width {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* vansh4117v */
