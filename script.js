@@ -193,7 +193,7 @@ function loadChart(id, array) {
                 },
                 title: {
                     display: true,
-                    text: 'Expense',
+                    text: (id === "expenseChart") ? "Expenses" : "Income",
                 },
             },
         },
