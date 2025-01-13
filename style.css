@@ -16,6 +16,7 @@
 
 body {
     background-color: #dee3e7;
+    width: 100vw;
 }
 
 .dashboard {
@@ -180,7 +181,7 @@ body {
     margin-bottom: 10px;
 }
 
-.budget-list .inner{
+.budget-list .inner {
     background-color: orange;
     border-radius: 1rem;
     height: 0.5rem;
@@ -214,6 +215,7 @@ footer {
     width: 100%;
     display: flex;
     justify-content: center;
+    width: 100vw;
     align-items: center;
 }
 
@@ -276,6 +278,29 @@ footer i {
 
     100% {
         transform: translateX(0);
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .home {
+        font-size: 2.5rem;
+        padding: 20px;
+    }
+
+    .total-outer {
+        flex-direction: column;
+    }
+
+    #income,
+    #expense,
+    #budget {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    footer {
+        font-size: 12px;
     }
 }
 
