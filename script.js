@@ -198,7 +198,6 @@ function loadChart(id, array) {
             },
         },
     };
-
     return new Chart(chart, config);
 }
 

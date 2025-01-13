@@ -17,6 +17,7 @@
 body {
     background-color: #dee3e7;
     width: 100vw;
+    overflow-x: hidden;
 }
 
 .dashboard {
