@@ -6,6 +6,7 @@ const totalBalance = document.getElementById("total-balance")
 const totalExpense = document.getElementById("total-expense")
 
 const resetButton = document.getElementById("reset")
+
 let incomeChart;
 let expenseChart;
 
